@@ -109,4 +109,80 @@ function sortString(string) {
     // return the last value in the result array
     return result[num]
   }
-  The reason why the result ar
+  
+  // typeof '87' => string type of 87 => number
+// strings are indexed chicken 0123456 
+console.log('chicken'[0]) // will retrun c 
+// chicken.length will count the number of letters in the word
+
+// camelcase function code kata
+function toCamelCase(str){
+    var regExp=/[-_]\w/ig;
+    return str.replace(regExp,function(match){
+          return match.charAt(1).toUpperCase();
+     });
+}
+// filter a list to get only the numbers
+
+function filter_list(l) {
+    // Return a new array with the strings filtered out
+    let newList = [] 
+   
+  let result = l.filter(l => typeof l === 'number');
+    return result
+  }
+
+  function getMiddle(s)
+{
+  return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
+}
+
+
+function createPhoneNumber(numbers){
+  
+    numbers.unshift('(')
+      numbers.splice(4,0,')')
+      numbers.splice(5,0,' ')
+      numbers.splice(9,0,'-')
+      return numbers.join('')
+    }
+   
+    function createPhoneNumber(numbers){
+        return numbers.reduce((p,c) => p.replace('x',c), "(xxx) xxx-xxxx");
+     }
+
+     var isSquare = function(n){
+  
+        return n >= 0 && Math.sqrt(n) % 1 === 0; 
+       }
+
+       function iqTest(numbers){
+        numbers = numbers.split(" ").map(function(el){return parseInt(el)});
+        
+        var odd = numbers.filter(function(el){ return el % 2 === 1});
+        var even = numbers.filter(function(el){ return el % 2 === 0});
+        
+        return odd.length < even.length ? (numbers.indexOf(odd[0]) + 1) : (numbers.indexOf(even[0]) + 1);
+      }
+      function persistence(num) {
+        //code me
+         console.log(num.toString().split(''))
+       let i = 0 
+     //   while the length is more than 1 keep on looping until we get one number
+     //   count the number of iterations
+       while(num.toString().length !== 1 ) {
+     num = num.toString().split("").reduce((a,b)=>{
+       console.log(a,b, a*b)
+     return  a*b
+     
+     });
+         
+         i++;
+       }
+       console.log(num.toString())
+       return i
+      
+     
+     }
+     
+     
