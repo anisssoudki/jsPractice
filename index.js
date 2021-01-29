@@ -184,5 +184,54 @@ function createPhoneNumber(numbers){
       
      
      }
+
+  function towerBuilder(nFloor){
+        var array=[];
+        for(var i=0; i<nFloor; i++){
+          array.push(" ".repeat(nFloor-i-1)+
+                     "*".repeat(2*i+1)+
+                     " ".repeat(nFloor-i-1));
+        }
+        return array;
+      }
+
+      const towerBuilder = n =>
+  [...Array(n)].map((_, i) => ' '.repeat(n-i-1) + '*'.repeat(i*2+1) + ' '.repeat(n-i-1)) 
+     
+  function list(arr){
+    let len = arr.length;
+    if(len==0) return '';
+    return arr.slice(0, len-1).map(p=>p.name).join(", ") + (len>1 ? ' & ' : '') + arr[len-1].name;
+  }
+
+  function digital_root(number) {
+    let sum = number
+    let arr = []
+    let reducer = (a,b) => parseInt(a) + parseInt(b)
+ 
+    while (sum > 9) {
+       arr = sum.toString().split("")
+       sum = arr.reduce(reducer)
+    }
+ 
+   return sum
+ }
+
+ function findOdd(A) {
+    var count = 0;
+  for(var i = 0; i<A.length; i++){
+    for(var j = 0; j<A.length; j++){
+      if(A[i] == A[j]){
+        console.log('this is ',i,j,count)
+        count++;
+      }
+    }
+    if(count % 2 !== 0 ){
+      return A[i];
+    }
+  }
+};
+// Cool one liner using ES6
+const findOdd = A => A.filter(x => A.filter(v => x === v).length % 2 === 1).reduce(a => a);
      
      
