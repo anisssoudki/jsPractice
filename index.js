@@ -5,6 +5,7 @@ const palindrome = str => {
   // comparisong
   return str === str.split('').reverse().join('')
 }
+// fizzbuzz
 
 const fizzBuzz = num => {
     for(let i = 1; i <= num; i++) {
